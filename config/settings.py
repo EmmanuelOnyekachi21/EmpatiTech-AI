@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third-party apps
+    'rest_framework',
+    'corsheaders',
+
+    # My apps
+    'core',
+    'pillar1_conversational',
+    'pillar2_analytics',
+    'pillar3_medication',
 ]
 
 MIDDLEWARE = [
@@ -72,10 +82,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'empatitech_ai',
+        'USER': 'd3mxn',
+        'PASSWORD': '0802',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
